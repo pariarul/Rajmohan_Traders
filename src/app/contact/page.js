@@ -38,7 +38,7 @@ export default function Contact() {
                         <h1 className="text-4xl md:text-6xl mb-6">Connect With Us</h1>
                         <p className="text-xl text-blue-100/80 leading-relaxed">
                             Have a question about our products or need a wholesale quote?
-                            Reach out to us and we'll get back to you within 24 hours.
+                            Reach out to us and we will get back to you within 24 hours.
                         </p>
                     </div>
                 </div>
@@ -73,9 +73,7 @@ export default function Contact() {
                                         <div>
                                             <p className="font-bold text-slate-900 mb-1">Call Us</p>
                                             <div className="flex flex-col space-y-1">
-                                                <a href="tel:+919894715530" className="text-sm text-slate-500 hover:text-brand-blue">
-                                                    +91 98947 15530
-                                                </a>
+                                      
                                                 <a href="tel:+919385996553" className="text-sm text-slate-500 hover:text-brand-blue">
                                                     +91 93859 96553
                                                 </a>
@@ -104,13 +102,10 @@ export default function Contact() {
                                 </h3>
                                 <ul className="space-y-4">
                                     <li className="flex justify-between text-sm py-2 border-b border-slate-200">
-                                        <span className="text-slate-500">Mon - Sat</span>
-                                        <span className="font-bold text-slate-900">9 AM - 8:30 PM</span>
+                                        <span className="text-slate-500">Monday-Sunday</span>
+                                        <span className="font-bold text-slate-900">9 AM - 10:30 PM</span>
                                     </li>
-                                    <li className="flex justify-between text-sm py-2">
-                                        <span className="text-slate-500">Sunday</span>
-                                        <span className="font-bold text-brand-gold">Closed</span>
-                                    </li>
+             
                                 </ul>
                             </div>
 
@@ -143,7 +138,7 @@ export default function Contact() {
                                                 type="text"
                                                 required
                                                 className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-brand-blue focus:リング-2 focus:ring-brand-blue/20 outline-none transition-all text-slate-900"
-                                                placeholder="e.g. Rahul Sharma"
+                                                placeholder="Enter your full name"
                                                 value={formData.name}
                                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                             />
@@ -154,7 +149,7 @@ export default function Contact() {
                                                 type="tel"
                                                 required
                                                 className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-brand-blue focus:リング-2 focus:ring-brand-blue/20 outline-none transition-all text-slate-900"
-                                                placeholder="e.g. +91 98765 43210"
+                                                placeholder="Enter your Phone number"
                                                 value={formData.phone}
                                                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                                             />
@@ -167,7 +162,7 @@ export default function Contact() {
                                             type="email"
                                             required
                                             className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:border-brand-blue focus:リング-2 focus:ring-brand-blue/20 outline-none transition-all text-slate-900"
-                                            placeholder="e.g. support@example.com"
+                                            placeholder="Enter your Email address "
                                             value={formData.email}
                                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                         />
@@ -195,14 +190,14 @@ export default function Contact() {
                                 </form>
 
                                 {/* Map Placeholder */}
-                                <div className="mt-16 relative rounded-3xl overflow-hidden h-64 bg-slate-200 flex items-center justify-center border border-slate-200">
+                                {/* <div className="mt-16 relative rounded-3xl overflow-hidden h-64 bg-slate-200 flex items-center justify-center border border-slate-200">
                                     <div className="text-center p-6">
                                         <MapPin className="text-brand-blue/40 mx-auto mb-4" size={48} />
                                         <p className="text-slate-500 font-medium italic">Map Location View - Erode, TN</p>
                                         <p className="text-[10px] text-slate-400 mt-2">171A, Eswaran Kovil Street, Erode</p>
                                     </div>
                                     <div className="absolute inset-0 bg-transparent cursor-pointer hover:bg-brand-blue/5 transition-colors"></div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

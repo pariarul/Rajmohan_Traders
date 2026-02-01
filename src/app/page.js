@@ -143,25 +143,31 @@ export default function Home() {
       <section className="py-24 relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/2 relative">
-              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/category-saree.jpg"
-                  alt="Textile Display"
-                  width={600}
-                  height={500}
-                  className="object-cover w-full h-[500px]"
-                />
-              </div>
-              {/* Decorative Elements */}
-              <div className="absolute -bottom-6 -right-6 w-64 h-64 bg-brand-gold/10 rounded-full -z-10 blur-3xl"></div>
-              <div className="absolute -top-10 -left-10 w-40 h-40 bg-brand-blue/5 rounded-full -z-10"></div>
+<div className="relative lg:w-1/2 h-[520px] rounded-3xl overflow-hidden shadow-2xl">
+  {/* Background Image */}
+  <Image
+    src="/category-saree.jpg"
+    alt="Textile Display"
+    fill
+    className="object-cover"
+  />
 
-              <div className="absolute top-1/2 -right-8 transform -translate-y-1/2 bg-white p-6 rounded-2xl shadow-xl border border-brand-gold/20 hidden md:block">
-                <p className="text-4xl font-display font-bold text-brand-blue mb-1">100%</p>
-                <p className="text-xs text-slate-500 uppercase tracking-widest font-bold">Reliability</p>
-              </div>
-            </div>
+  {/* Dark Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
+
+  {/* Content Overlay */}
+  <div className="relative z-10 flex h-full items-end p-8">
+    <div className="bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-xl max-w-xs">
+      <p className="text-4xl font-display font-bold text-brand-blue mb-1">
+        100%
+      </p>
+      <p className="text-xs uppercase tracking-widest font-bold text-slate-600">
+        Reliability
+      </p>
+    </div>
+  </div>
+</div>
+
 
             <div className="lg:w-1/2 space-y-6">
               <span className="text-brand-gold font-bold tracking-widest uppercase text-sm">Our Legacy</span>
@@ -205,7 +211,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
                 <a href="tel:+919894715530" className="bg-brand-gold text-brand-blue px-10 py-5 rounded-full font-bold text-lg hover:bg-brand-gold-light transition-all shadow-xl">
-                  Call: +91 98947 15530
+                  Call: +91 93859 96553
                 </a>
                 <Link href="/contact" className="bg-white text-brand-blue px-10 py-5 rounded-full font-bold text-lg hover:bg-blue-50 transition-all shadow-xl">
                   Email Inquiry

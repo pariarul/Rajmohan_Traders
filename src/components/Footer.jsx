@@ -67,7 +67,7 @@ export default function Footer() {
                             <li className="flex items-center space-x-3">
                                 <Phone className="text-brand-gold shrink-0" size={18} />
                                 <a href="tel:+919894715530" className="text-sm hover:text-white transition-colors">
-                                    +91 98947 15530
+                                    +91 93859 96553
                                 </a>
                             </li>
                             <li className="flex items-center space-x-3">
@@ -84,12 +84,8 @@ export default function Footer() {
                         <h4 className="text-white font-display font-semibold mb-6 text-lg">Business Hours</h4>
                         <ul className="space-y-3 text-sm">
                             <li className="flex justify-between border-b border-slate-800 pb-2">
-                                <span>Mon - Sat</span>
-                                <span className="text-white">9:00 AM - 8:30 PM</span>
-                            </li>
-                            <li className="flex justify-between border-b border-slate-800 pb-2">
-                                <span>Sunday</span>
-                                <span className="text-brand-gold">Closed</span>
+                                <span>Monday - Sunday</span>
+                                <span className="text-white">9:00 AM - 10:30 PM</span>
                             </li>
                         </ul>
                         <div className="mt-8">
@@ -101,10 +97,15 @@ export default function Footer() {
 
                 <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
                     <p>© {currentYear} Rajmohan Traders – All Rights Reserved.</p>
-                    <div className="flex space-x-6 mt-4 md:mt-0">
-                        <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-                        <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
-                    </div>
+<div className="flex space-x-6 mt-4 md:mt-0 text-sm">
+  <Link href="/privacy-policy" className="hover:text-white transition-colors">
+    Privacy Policy
+  </Link>
+  <Link href="/terms-of-service" className="hover:text-white transition-colors">
+    Terms of Service
+  </Link>
+</div>
+
                 </div>
             </div>
         </footer>
