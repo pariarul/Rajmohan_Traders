@@ -10,8 +10,6 @@ import {
   Users,
   ShieldCheck,
   ShoppingBag,
-  MapPin,
-  Clock
 } from "lucide-react";
 import PageWrapper from "@/components/PageWrapper";
 
@@ -41,18 +39,17 @@ const highlights = [
 export default function Home() {
   return (
     <PageWrapper>
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-        {/* Background Image with Overlay */}
+      {/* HERO SECTION */}
+      <section className="relative min-h-screen flex items-center pt-24 md:pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero-textile.jpg" // Placeholder path for now, I'll need to move my generated images
+            src="/hero-textile.jpg"
             alt="Premium Textile Background"
             fill
-            className="object-cover"
             priority
+            className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-blue-dark/90 via-brand-blue-dark/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-blue-dark/90 via-brand-blue-dark/70 to-transparent" />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
@@ -62,25 +59,34 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-block py-1 px-4 rounded-full bg-brand-gold/20 border border-brand-gold/30 text-brand-gold-light text-sm font-semibold mb-6 tracking-widest uppercase">
+              <span className="inline-block py-1 px-4 rounded-full bg-brand-gold/20 border border-brand-gold/30 text-brand-gold-light text-xs sm:text-sm font-semibold mb-6 tracking-widest uppercase">
                 Welcome to Rajmohan Traders
               </span>
-              <h1 className="text-5xl md:text-7xl text-white mb-6 leading-[1.1]">
+
+              <h1 className="text-4xl sm:text-5xl md:text-7xl text-white mb-6 leading-tight">
                 Trusted Wholesale & <br />
                 <span className="text-gradient-gold">Retail Textile</span> Traders
               </h1>
-              <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl">
+
+              <p className="text-base sm:text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl">
                 Experience excellence in Every Thread. We provide premium quality
                 fabrics, sarees, and textile goods to Erode and beyond, built on
                 decades of trust and reliability.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact" className="btn-primary flex items-center justify-center space-x-2">
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <Link
+                  href="/contact"
+                  className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2"
+                >
                   <span>Enquire Now</span>
                   <ArrowRight size={18} />
                 </Link>
-                <Link href="/products" className="btn-secondary flex items-center justify-center bg-white/10 border-white/20 text-white hover:bg-white hover:text-brand-blue">
+
+                <Link
+                  href="/products"
+                  className="btn-secondary w-full sm:w-auto flex items-center justify-center bg-white/10 border-white/20 text-white hover:bg-white hover:text-brand-blue"
+                >
                   Explore Products
                 </Link>
               </div>
@@ -88,48 +94,49 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Floating Badges for Mobile-First visual appeal */}
+        {/* FLOATING BADGES (DESKTOP ONLY) */}
         <div className="absolute bottom-10 left-0 w-full hidden md:block">
           <div className="container mx-auto px-6">
-            <div className="flex space-x-12 text-white/60 text-sm tracking-wider uppercase">
-              <div className="flex items-center space-x-2">
-                <CheckCircle2 size={16} className="text-brand-gold" />
-                <span>GST Registered</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle2 size={16} className="text-brand-gold" />
-                <span>Erode Based</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle2 size={16} className="text-brand-gold" />
-                <span>Premium Quality</span>
-              </div>
+            <div className="flex space-x-12 text-white/60 text-sm uppercase tracking-wider">
+              {["GST Registered", "Erode Based", "Premium Quality"].map(
+                (item, i) => (
+                  <div key={i} className="flex items-center space-x-2">
+                    <CheckCircle2 size={16} className="text-brand-gold" />
+                    <span>{item}</span>
+                  </div>
+                )
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Highlights Section */}
-      <section className="py-24 bg-slate-50">
+      {/* HIGHLIGHTS */}
+      <section className="py-16 md:py-24 bg-slate-50">
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl text-brand-blue mb-4">Why Choose Rajmohan Traders?</h2>
+          <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl text-brand-blue mb-4">
+              Why Choose Rajmohan Traders?
+            </h2>
             <p className="text-slate-600">
-              We take pride in our heritage and commitment to providing the finest textile products to our valued customers.
+              We take pride in our heritage and commitment to providing the finest
+              textile products.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {highlights.map((item, index) => (
               <motion.div
                 key={index}
-                whileHover={{ y: -10 }}
-                className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-all"
+                whileHover={{ y: -8 }}
+                className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all"
               >
                 <div className="w-12 h-12 bg-brand-gold/10 rounded-xl flex items-center justify-center mb-6">
                   {item.icon}
                 </div>
-                <h3 className="text-xl text-brand-blue mb-3">{item.title}</h3>
+                <h3 className="text-xl text-brand-blue mb-3">
+                  {item.title}
+                </h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   {item.description}
                 </p>
@@ -139,84 +146,82 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Intro Section */}
-      <section className="py-24 relative overflow-hidden">
+      {/* INTRO / LEGACY */}
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-<div className="relative lg:w-1/2 h-[520px] rounded-3xl overflow-hidden shadow-2xl">
-  {/* Background Image */}
-  <Image
-    src="/category-saree.jpg"
-    alt="Textile Display"
-    fill
-    className="object-cover"
-  />
+          <div className="flex flex-col lg:flex-row items-center gap-12 md:gap-16">
+            <div className="relative w-full lg:w-1/2 h-[360px] sm:h-[420px] lg:h-[520px] rounded-3xl overflow-hidden shadow-2xl">
+              <Image
+                src="/category-saree.jpg"
+                alt="Textile Display"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
+              <div className="relative z-10 flex h-full items-end p-6 sm:p-8">
+                <div className="bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-xl">
+                  <p className="text-4xl font-bold text-brand-blue">100%</p>
+                  <p className="text-xs uppercase tracking-widest font-bold text-slate-600">
+                    Reliability
+                  </p>
+                </div>
+              </div>
+            </div>
 
-  {/* Dark Gradient Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
-
-  {/* Content Overlay */}
-  <div className="relative z-10 flex h-full items-end p-8">
-    <div className="bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-xl max-w-xs">
-      <p className="text-4xl font-display font-bold text-brand-blue mb-1">
-        100%
-      </p>
-      <p className="text-xs uppercase tracking-widest font-bold text-slate-600">
-        Reliability
-      </p>
-    </div>
-  </div>
-</div>
-
-
-            <div className="lg:w-1/2 space-y-6">
-              <span className="text-brand-gold font-bold tracking-widest uppercase text-sm">Our Legacy</span>
-              <h2 className="text-4xl text-brand-blue leading-tight">
+            <div className="lg:w-1/2 space-y-5 md:space-y-6 text-center lg:text-left">
+              <span className="text-brand-gold font-bold tracking-widest uppercase text-sm">
+                Our Legacy
+              </span>
+              <h2 className="text-3xl sm:text-4xl text-brand-blue leading-tight">
                 Authentic Textile Heritage <br /> From Erode
               </h2>
-              <p className="text-slate-600 leading-relaxed text-lg">
-                Rajmohan Traders is a proprietorship firm led by <strong>Shanmugam Mohanraj</strong>.
-                Based in the heart of Erode's textile hub, we have established ourselves
-                as a reliable partner for both wholesale buyers and retail customers.
+              <p className="text-slate-600 leading-relaxed">
+                Rajmohan Traders is a proprietorship firm led by{" "}
+                <strong>Shanmugam Mohanraj</strong>, serving wholesale and retail
+                customers with trusted quality.
               </p>
               <p className="text-slate-600 leading-relaxed">
-                Our commitment to quality and fair pricing has made us a preferred choice
-                in the region. Whether you are looking for traditional sarees or modern
-                fabrics, we offer a curated selection that meets the highest standards.
+                From traditional sarees to modern fabrics, we ensure fair
+                pricing and consistent quality.
               </p>
-              <div className="pt-6">
-                <Link href="/about" className="text-brand-blue font-bold flex items-center space-x-2 group">
-                  <span>Learn more about us</span>
-                  <ArrowRight size={18} className="transition-transform group-hover:translate-x-2" />
-                </Link>
-              </div>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 text-brand-blue font-bold group"
+              >
+                Learn more about us
+                <ArrowRight
+                  size={18}
+                  className="transition-transform group-hover:translate-x-2"
+                />
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20">
+      {/* CTA */}
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-6">
-          <div className="bg-brand-blue rounded-[2.5rem] p-12 md:p-20 relative overflow-hidden shadow-2xl">
-            {/* Background Texture */}
-            <div className="absolute inset-0 opacity-10 pointer-events-none">
-              <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,gold_1px,transparent_1px)] bg-[length:40px_40px]"></div>
-            </div>
-
-            <div className="relative z-10 flex flex-col items-center text-center">
-              <h2 className="text-4xl md:text-5xl text-white mb-8">Ready to Source Premium Textiles?</h2>
-              <p className="text-xl text-blue-100 mb-12 max-w-2xl">
-                Get in touch with us today for wholesale inquiries or visit our store in Erode for retail shopping.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6">
-                <a href="tel:+919894715530" className="bg-brand-gold text-brand-blue px-10 py-5 rounded-full font-bold text-lg hover:bg-brand-gold-light transition-all shadow-xl">
-                  Call: +91 93859 96553
-                </a>
-                <Link href="/contact" className="bg-white text-brand-blue px-10 py-5 rounded-full font-bold text-lg hover:bg-blue-50 transition-all shadow-xl">
-                  Email Inquiry
-                </Link>
-              </div>
+          <div className="bg-brand-blue rounded-[2rem] md:rounded-[2.5rem] p-8 sm:p-12 md:p-20 text-center shadow-2xl relative overflow-hidden">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl text-white mb-6">
+              Ready to Source Premium Textiles?
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+              Contact us for wholesale inquiries or visit our store in Erode.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+              <a
+                href="tel:+919385996553"
+                className="w-full sm:w-auto bg-brand-gold text-brand-blue px-10 py-5 rounded-full font-bold text-lg shadow-xl"
+              >
+                Call Now
+              </a>
+              <Link
+                href="/contact"
+                className="w-full sm:w-auto bg-white text-brand-blue px-10 py-5 rounded-full font-bold text-lg shadow-xl"
+              >
+                Email Inquiry
+              </Link>
             </div>
           </div>
         </div>
